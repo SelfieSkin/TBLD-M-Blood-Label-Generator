@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TBLD-M Training Blood Label Generator</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Theater Blood Mobile (TBLD-M)</p>
+          <h1>Training Blood Label Generator</h1>
+          <p>Build printable, clearly marked training labels for field collection lanes, rehearsal events, and classroom exercises. Every generated label includes a prominent training-only warning.</p>
+        </div>
+        <div class="hero-card">
+          <strong id="labelCount">0</strong>
+          <span>labels ready</span>
+          <button id="printButton" type="button">Print Labels</button>
+          <button id="csvButton" class="secondary" type="button">Export CSV</button>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <form class="controls" id="labelForm" aria-label="Blood Unit label configuration">
+          <h2><mark>Blood Unit</mark></h2>
+          <label>ABO/RH Type<select name="bloodType" id="bloodType"></select></label>
+          <label>Product Type<select name="productType" id="productType"></select></label>
+          <label>Collection Date<input name="collectionDate" type="date" /></label>
+          <label>Unit Volume<select name="unitVolume" id="unitVolume"></select></label>
+          <label>Number of Labels Needed<input name="quantity" type="number" min="1" max="60" value="8" /></label>
+          <button class="generate-button" type="submit">Generate Label</button>
+
+          <details>
+            <summary>Optional training metadata</summary>
+            <label>Donor prefix<input name="donorPrefix" value="TBLDM" /></label>
+            <label>Shelf life (days)<input name="shelfLifeDays" type="number" min="1" max="60" value="21" /></label>
+            <label>Storage requirement<input name="storageRequirement" value="Store 1-6°C / training simulation" /></label>
+            <label>Scenario<input name="trainingScenario" value="TBLD-M field collection lane" /></label>
+            <label>Remarks<textarea name="remarks">Not for transfusion - training use only</textarea></label>
+          </details>
+        </form>
+        <section class="label-sheet" id="labelSheet" aria-label="Generated training labels"></section>
+      </section>
+    </main>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

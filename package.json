@@ -1,0 +1,10 @@
+{
+  "name": "tbld-m-blood-label-generator",
+  "version": "1.0.0",
+  "description": "Training blood label generator for Theater Blood Mobile (TBLD-M).",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "start": "node server.js"
+  }
+}
